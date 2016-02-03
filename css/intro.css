@@ -1,4 +1,7 @@
-body {
+*{
+	padding:0;
+	margin:0;
+	}body {
     margin: 0 50px 20px;
     box-shadow: 5px 5px 10px 1px gray, -5px 5px 10px 1px gray;
     font-family: Roboto;
@@ -70,10 +73,11 @@ section#features {
 }
 
 .slider img{
-	margin:40px auto;
+	padding:40px auto;
 	height: 340px;
 	width: 900px;
 	display: none;
+	margin:0;
 }
 
 #intro {
