@@ -57,14 +57,29 @@ nav li a:hover {
     box-shadow: 5px 5px 10px 0 #FFA000 inset, -5px -5px 10px 0 #FFA000 inset;
 }
 
-section {
+section#features {
     max-width: 100%;
-    padding: 100px 0;
+    padding: 100px 0 0 100px;
+}
+
+.slider {
+	overflow: hidden;
+	width: 900px;
+	height: 400px;
+	margin: 40px auto;
+}
+
+.slider img{
+	margin:40px auto;
+	height: 340px;
+	width: 900px;
+	display: none;
 }
 
 #intro {
     text-align: center;
     background-color: lightblue;
+    padding-bottom: 40px;
 }
 
 #features {
@@ -98,5 +113,5 @@ footer {
   background: #ffb7b7; 
 }
 ::-moz-selection {
-  background: #ffb7b7;
+  background: #ffb7b7; 
 }
