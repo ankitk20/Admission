@@ -93,3 +93,10 @@ footer {
     background-color: orange;
     text-align: center;
 }
+
+::selection {
+  background: #ffb7b7; 
+}
+::-moz-selection {
+  background: #ffb7b7;
+}
