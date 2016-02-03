@@ -52,7 +52,7 @@ nav li a {
 }
 
 nav li a:hover {
-    /*border-radius: 50px;*/
+    border-radius: 50px 25px 50px 25px;
     box-shadow: none;
     box-shadow: 5px 5px 10px 0 #FFA000 inset, -5px -5px 10px 0 #FFA000 inset;
 }
