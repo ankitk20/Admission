@@ -1,0 +1,22 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+}
+
+header {
+    padding: 25px 0;
+}
+
+.navbar, .nav-pills li a {
+    border-radius: 0;
+}
+
+.affix {
+    top: 20px;
+    z-index: 9999 !important;
+}
+
+footer {
+    color: white;
+    padding: 20px 0;
+    background-color: orange;
+}

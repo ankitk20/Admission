@@ -1,0 +1,23 @@
+/*.modal {
+    text-align: center;
+}
+
+.modal::before {
+    content: '';
+    display: inline-block;
+    height: 100%; 
+    vertical-align: middle;
+}
+
+.modal-dialog {
+    top: 50%;
+    left: 50%;
+}*/
+
+/*.help-block {
+	display: none;
+}
+
+div.input-group:hover + .help-block {
+	display: block;
+}*/
