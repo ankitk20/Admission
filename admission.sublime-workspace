@@ -1,0 +1,471 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"form	Tag"
+			],
+			[
+				"t",
+				"top"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"bro",
+				"border-radius"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"sc",
+				"script"
+			],
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"bore",
+				"border"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"borde",
+				"border-left"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"po",
+				"background-position"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"l",
+				"lang	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "html/intro.html",
+			"settings":
+			{
+				"buffer_size": 5413,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\n<!-- Meta tags -->\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n<meta charset=\"utf-8\" />\n<!-- CSS -->\n<link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />\n<link href=\"../css/template.css\" rel=\"stylesheet\" type=\"text/css\" />\n<!-- Fonts -->\n<link href=\"https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic\" rel=\"stylesheet\" type=\"text/css\" />\n<title>Admission Portal</title>\n\n</head>\n<body onload=\"$('#loginModal').modal({backdrop: 'static', keyboard: false});\">\n\n<header class=\"container-fluid\" role=\"banner\">\n  <img class=\"img-responsive\" src=\"../images/header.png\" alt=\"header\" />\n</header>\n\n<nav class=\"navbar navbar-inverse\" role=\"navigation\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#theNavbar\">\n        <span class=\"sr-only\">Toggle Navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"theNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"intro.html\">Home</a></li>\n        <li><a href=\"#\">Admission</a></li>\n        <li><a href=\"#\">Departments</a></li>\n        <li><a href=\"#\">Activities</a></li>\n        <li><a href=\"#\">Placements</a></li>\n        <li><a href=\"#\">About Us</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<main class=\"container-fluid\">\n  <p class=\"lead text-center\" id=\"demo\">Something to lean on.</p>\n</main>\n<footer class=\"container-fluid text-center\" role=\"footer\">Brought to you by VESIT</footer>\n\n<!-- Modal -->\n<div id=\"loginModal\" class=\"modal fade\" role=\"dialog\">\n  <div class=\"modal-dialog\">\n\n    <!-- Modal content-->\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h4>Enter the magic number</h4>\n      </div>\n      <form role=\"form\" method=\"post\">\n        <div class=\"modal-body\">\n          <div class=\"form-group\">\n            <span class=\"help-block\">Enter the number you purchased at the college.</span>\n            <input type=\"text\" id=\"mNo\" name=\"mNo\" class=\"form-control\" placeholder=\"Magic Number. Magic Number.\" required=\"required\" />\n          </div>\n          <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n        </div>\n      </form>\n    </div>\n\n  </div>\n</div>\n\n<!-- Scripts -->\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js\"></script>\n<script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js\"></script>\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"></script>\n<!-- <script src=\"../js/scroll.js\"></script> -->\n\n</body>\n</html>\n",
+			"file": "html/login.html",
+			"file_size": 2861,
+			"file_write_time": 130992448145131706,
+			"settings":
+			{
+				"buffer_size": 2861,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/login.css",
+			"settings":
+			{
+				"buffer_size": 198,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/template.css",
+			"settings":
+			{
+				"buffer_size": 407,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 222.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/siddhesh/Documents/Admission_Backup",
+		"/home/siddhesh/Documents/Admission_Backup/css",
+		"/home/siddhesh/Documents/Admission_Backup/html"
+	],
+	"file_history":
+	[
+		"/var/www/html/mysql.php",
+		"/home/siddhesh/Documents/Admission_Backup/js/scroll.js",
+		"/home/siddhesh/Documents/Admission_Backup/css/intro.css",
+		"/home/siddhesh/Documents/Admission_Backup/admission.sublime-project",
+		"/home/siddhesh/Documents/Admission/html/intro.html",
+		"/home/siddhesh/Documents/Admission/css/intro.css",
+		"/home/siddhesh/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/siddhesh/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/siddhesh/Documents/Admission/page1.html",
+		"/home/siddhesh/Documents/VESIT_Admission_Backup/css/intro.css",
+		"/home/siddhesh/Documents/VESIT_Admission_Backup/html/intro.html",
+		"/home/siddhesh/Documents/w",
+		"/home/siddhesh/Documents/VESIT_Admission/html/intro.html",
+		"/home/siddhesh/Documents/VESIT_Admission/css/intro.css",
+		"/home/siddhesh/Documents/VESIT_Admission/intro.html",
+		"/home/siddhesh/Documents/VESIT_Admission/page1.html"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>",
+			"label",
+			"span",
+			"data",
+			"h3",
+			"p",
+			"intro.css",
+			"href",
+			"myModal",
+			" +",
+			"tab",
+			"nav",
+			"\n    ",
+			"myCarousel",
+			"inset",
+			">\n",
+			"radius",
+			"float",
+			"\n    ",
+			"height",
+			"nl"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"template.css",
+			"    ",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "html/intro.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1865,
+								1865
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 527.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2381,
+								2442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 631.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/login.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/template.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "admission.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"css/intro.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 157.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
