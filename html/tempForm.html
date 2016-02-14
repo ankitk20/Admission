@@ -8,6 +8,7 @@
 <!-- CSS -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="../css/template.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/validate.js"></script>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" rel="stylesheet" type="text/css" />
 <title>Admission Portal</title>
@@ -31,8 +32,8 @@
     </div>
     <div class="collapse navbar-collapse" id="theNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="intro.html">Home</a></li>
-        <li><a href="#">Admission</a></li>
+        <li><a href="intro.html">Home</a></li>
+        <li class="active"><a href="tempForm.html">Admission</a></li>
         <li><a href="#">Departments</a></li>
         <li><a href="#">Activities</a></li>
         <li><a href="#">Placements</a></li>
@@ -43,32 +44,32 @@
 </nav>
 
 <main class="container">
-	<form role="form" method="post">
+	<form role="form" method="post" id="admForm">
 		<fieldset>
 			<legend>Personal Info</legend>
 
 			<!-- Name Section -->
 			<div class="form-group">
 				<label for="fName">First Name</label>
-				<input type="text" id="fName" class="form-control" required>
+				<input type="text" id="fName" name="fName" class="form-control" >
 			</div>
 			<div class="form-group">
 				<label for="mName">Middle Name</label>
-				<input type="text" id="mName" class="form-control" required>
+				<input type="text" id="mName" name="mName" class="form-control" >
 			</div>
 			<div class="form-group">
 				<label for="lName">Last Name</label>
-				<input type="text" id="lName" class="form-control" required>
+				<input type="text" id="lName" name="lName" class="form-control" >
 			</div>
 			<div class="form-group">
 				<label for="momName">Mother's name</label>
-				<input type="text" id="momName" class="form-control" required>
+				<input type="text" id="momName" name="momName"class="form-control" >
 			</div>
 
 			<!-- Address Section -->
 			<div class="form-group">
 				<label for="address">Address</label>
-				<textarea id="address" class="form-control" rows="3" required></textarea>
+				<textarea id="address" class="form-control" rows="4"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="state">State</label>
@@ -79,40 +80,40 @@
 			</div>
 			<div class="form-group">
 				<label for="city">City</label>
-				<select id="city" class="form-control">
+				<select id="city" class="form-control" required>
 					<option>Delhi</option>
 					<option>Mumbai</option>
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="pincode">Pin Code</label>
-				<input id="pincode" class="form-control" type="number">
+				<label for="pincode">Pin Code</label>    <!--6 diff textboxes with focus shift upon digit input-->
+				<input id="pincode" class="form-control" type="number" required>
 			</div>
 			<div class="form-group">
 				<label for="gender">Gender</label>
-				<select id="gender" class="form-control">
+				<select id="gender" class="form-control" required>
 					<option>Male</option>
 					<option>Female</option>
 				</select>
 			</div>
 			<div class="form-group">
 				<label for="dob">Date of Birth</label>
-				<input id="dob" class="form-control" type="datetime-local">
+				<input id="dob" class="form-control" name="dob" type="datetime-local" >
 			</div>
 			<div class="form-group">
 				<label for="religion">Religion</label>
-				<input id="religion" class="form-control" type="text">
+				<input id="religion" class="form-control" name="religion" type="text">
 			</div>
 			<div class="form-group">
 				<label for="mobNo">Mobile Number</label>
 				<div class="input-group">
 					<span class="input-group-addon">+ 91</span>
-					<input id="mobNo" class="form-control" type="number">
+					<input id="mobNo" class="form-control" name="mobNo" type="number">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="email">E-mail Id</label>
-				<input id="email" class="form-control" type="email">
+				<input id="email" class="form-control" type="email" required>
 			</div>
 			<div class="form-group">
 				<label for="altEmail">Alternate E-mail Id</label>
@@ -147,13 +148,13 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="photo">Photo<input id="photo" type="file"></label>
+				<label for="photo">Photo<input id="photo" type="file" required></label>
 			</div>
 			<div class="form-group">
-				<label for="sign">Signature<input id="sign" type="file"></label>
+				<label for="sign">Signature<input id="sign" type="file" required></label>
 			</div>
 			<div class="form-group">
-				<label for="fatherSign">Father's Signature<input id="fatherSign" type="file"></label>
+				<label for="fatherSign">Father's Signature<input id="fatherSign" type="file" required></label>
 			</div>
 		</fieldset>
 		<fieldset>
@@ -162,34 +163,34 @@
 			<h3>SSC</h3>
 			<div class="form-group">
 				<label for="sscSchool">Name Of School</label>
-				<input id="nameSSC" class="form-control" type="text">
+				<input id="nameSSC" class="form-control" type="text" required>
 			</div>
 			<div class="form-group">
 				<label for="sscNo">Seat Number</label>
-				<input id="sscNo" class="form-control" type="text">
+				<input id="sscNo" class="form-control" type="text" required>
 			</div>
 				<div class="form-group">
 					<label for="sscEng">English</label>
 					<div class="input-group">
-						<input id="sscEng" class="form-control" type="number">
+						<input id="sscEng" class="form-control" type="number" required>
 						<span class="input-group-addon">/ 100</span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="sscMat">Mathematics</label>
 					<div class="input-group">
-						<input id="sscMat" class="form-control" type="number">
+						<input id="sscMat" class="form-control" type="number" required>
 						<span class="input-group-addon">/ 150</span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="sscSci">Science</label>
 					<div class="input-group">
-						<input id="sscSci" class="form-control" type="number">
+						<input id="sscSci" class="form-control" type="number" required>
 						<span class="input-group-addon">/ 150</span>
 					</div>
 				</div>
-				<div class="form-group">
+				<!--<div class="form-group">
 					<label for="sscMar">Marathi</label>
 					<div class="input-group">
 						<input id="sscMar" class="form-control" type="number">
@@ -209,37 +210,37 @@
 						<input id="sscSoc" class="form-control" type="number">
 						<span class="input-group-addon">/ 150</span>
 					</div>
-				</div>
+				</div>-->
 				<div class="form-group">
 					<label for="sscObtMks">Marks Obtained</label>
-					<input class="form-control" type="number">
+					<input class="form-control" type="number" required>
 				</div>
 				<div class="form-group">
 					<label for="sscTotMks">Total Marks</label>
-					<input class="form-control" type="number">
+					<input class="form-control" type="number" required>
 				</div>
 				<div class="form-group">
 					<label for="sscPer">Percentage</label>
-					<input class="form-control" type="number">
+					<input class="form-control" type="number" required>
 				</div>
 				<div class="form-group">
-					<label for="sscBoard">Board Name</label>
+					<label for="sscBoard">Board Name</label>  <!-- give options for boardList-->
 					<input class="form-control" type="text">
 				</div>
 				<div class="form-group">
 					<label for="sscYear">Year Of Passing</label>
-					<input class="form-control" type="datetime-local">
+					<input class="form-control" type="datetime-local" required>
 				</div>
 			</div>
 			<hr/>
 			<h3>HSC</h3>
 			<div class="form-group">
 				<label for="hscSchool">Name Of College</label>
-				<input id="hscSchool" class="form-control" type="text">
+				<input id="hscSchool" class="form-control" type="text" required>
 			</div>
 			<div class="form-group">
 				<label for="hscNo">Seat Number</label>
-				<input id="hscNo" class="form-control" type="text">
+				<input id="hscNo" class="form-control" type="text" required>
 			</div>
 			<div class="form-group">
 				<label for="hscEng">English</label>
@@ -270,10 +271,10 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="hscHin">Hindi</label>
+				<label for="hscVocational">CS/Electronics/IT</label>
 				<div class="input-group">
-					<input id="hscHin" class="form-control" type="number">
-					<span class="input-group-addon">/ 100</span>
+					<input id="hscVocational" class="form-control" type="number">
+					<span class="input-group-addon">/ 200</span>
 				</div>
 			</div>
 			<div class="form-group">
@@ -301,27 +302,27 @@
 			<div class="form-group">
 				<label for="">Physics</label>
 				<div class="input-group">
-					<input id="" class="form-control" type="number">
+					<input id="" class="form-control" type="number" required>
 					<span class="input-group-addon">/ 120</span>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="">Chemistry</label>
 				<div class="input-group">
-					<input id="" class="form-control" type="number">
+					<input id="" class="form-control" type="number" required>
 					<span class="input-group-addon">/ 120</span>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="">Mathematics</label>
 				<div class="input-group">
-					<input id="" class="form-control" type="number">
+					<input id="" class="form-control" type="number" required>
 					<span class="input-group-addon">/ 120</span>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="">Total Marks</label>
-				<input id="" class="form-control" type="number">
+				<input id="" class="form-control" type="number"> <!-- write a script to calc total and protect the inputbox-->
 			</div>
 			<div class="form-group">
 				<label for="">Percentile</label>
@@ -382,7 +383,7 @@
 					</label>
 				</div>
 			</div>
-				<div class="form-group">
+				<!--<div class="form-group">
 					<label>Class</label><br/>
 					<div class="radio-inline">
 						<label>
@@ -418,6 +419,7 @@
 						</label>
 					</div>
 				</div>
+				-->
 		</fieldset>
 		<fieldset>
 			<legend>Documents</legend>
@@ -463,6 +465,7 @@
 		<br/><br/>
 	</form>
 </main>
+
 <footer class="container-fluid text-center" role="footer">Brought to you by VESIT</footer>
 
 <!-- Scripts -->
