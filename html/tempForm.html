@@ -151,13 +151,25 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="photo">Photo<input id="photo" name="photo" type="file" required></label>
+				<label for="photo">Photo<input id="photo" name="photo" type="file" style="display: none" required></label>
+				<div class="input-group">
+					<input id="photoText" class="form-control" type="text" readonly>
+					<span class="input-group-addon btn btnFile">Browse</span>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="sign">Signature<input id="sign" name="sign" type="file" required></label>
+				<label for="sign">Signature<input id="sign" name="sign" type="file" style="display: none" required></label>
+				<div class="input-group">
+					<input id="" class="form-control" type="text" readonly>
+					<span class="input-group-addon btn btnFile">Browse</span>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="fatherSign">Father's Signature<input id="fatherSign" name="fatherSign" type="file" required></label>
+				<label for="fatherSign">Father's Signature<input id="fatherSign" name="fatherSign" type="file" style="display: none" required></label>
+				<div class="input-group">
+					<input id="" class="form-control" type="text" readonly>
+					<span class="input-group-addon btn btnFile">Browse</span>
+				</div>
 			</div>
 		</fieldset>
 		<fieldset>
@@ -483,6 +495,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="../js/datepicker.js"></script>
 <script src="../js/validate.js"></script>
+<script>
+	$(function() {
+		$('input[type=file]').click().change(function() {
+			$(this).parent().next().children().first().val($(this).val());
+		});
+
+		$('.btnFile').click(function() {
+			$(this).parent().prev().children().click();
+		})
+	});
+</script>
 
 </body>
 </html>
