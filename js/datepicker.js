@@ -5,4 +5,4 @@ $(document).ready(function () {
 		changeYear: true,
 		maxDate: 0
 	});
-})
+});
