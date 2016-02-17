@@ -56,3 +56,17 @@ $(function() {
         }
     });
 });
+
+function emailCheck(){ 
+  var regex = /^[^~`!^=@#%$&*+-]{3,}@(g|hot)mail[.]com$/;
+  var email = document.getElementById('email').value;
+  var emailTest = regex.test(email);
+  if(emailTest){
+    return true;
+  }
+  else{
+    document.getElementById('emailLabel').innerHTML="InvalidEmail";
+    document.getElementById('emailLabel').style.color="red";
+    return false;
+  }         
+ }
