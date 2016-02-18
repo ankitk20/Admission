@@ -1,4 +1,4 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -116,7 +116,7 @@ x<!DOCTYPE html>
 			</div>
 			<div class="form-group">
 				<label for="email">E-mail Id</label>
-				<input id="email" name="email" class="form-control" type="email" required>
+				<input id="email" name="email" onkeyup="emailCheck()" class="form-control" type="email" required><label id="emailLabel"></label>
 			</div>
 			<div class="form-group">
 				<label for="altEmail">Alternate E-mail Id</label>
@@ -165,7 +165,7 @@ x<!DOCTYPE html>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="fatherSign">Father's Signature<input id="fatherSign" name="fatherSign" type="file" style="display: none" required></label>
+				<label for="fatherSign">Father's Signature<input id="fatherSign" name="fatherSign" type="file" style="display:none" required></label>
 				<div class="input-group">
 					<input id="" class="form-control" type="text" readonly>
 					<span class="input-group-addon btn btnFile">Browse</span>
@@ -205,27 +205,6 @@ x<!DOCTYPE html>
 						<span class="input-group-addon">/ 150</span>
 					</div>
 				</div>
-				<!-- <div class="form-group">
-					<label for="sscMar">Marathi</label>
-					<div class="input-group">
-						<input id="sscMar" class="form-control" type="number">
-						<span class="input-group-addon">/ 100</span>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="sscHin">Hindi</label>
-					<div class="input-group">
-						<input id="sscHin" class="form-control" type="number">
-						<span class="input-group-addon">/ 100</span>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="sscSoc">Social</label>
-					<div class="input-group">
-						<input id="sscSoc" class="form-control" type="number">
-						<span class="input-group-addon">/ 150</span>
-					</div>
-				</div> -->
 				<div class="form-group">
 					<label for="sscObtMks">Marks Obtained</label>
 					<input id="sscObtMks" class="form-control" type="number" required>
@@ -412,42 +391,6 @@ x<!DOCTYPE html>
 					</label>
 				</div>
 			</div>
-			<!-- <div class="form-group">
-				<label>Class</label><br/>
-				<div class="radio-inline">
-					<label>
-						<input name="class" type="radio"> FE
-					</label>
-				</div>
-				<div class="radio-inline">
-					<label>
-						<input name="class" type="radio"> SE
-					</label>
-				</div>
-				<div class="radio-inline">
-					<label>
-						<input name="class" type="radio"> TE
-					</label>
-				</div>
-				<div class="radio-inline">
-					<label>
-						<input name="class" type="radio"> BE
-					</label>
-				</div>
-			</div>
-			<div class="form-group">
-				<label>Type Of Candidate</label><br/>
-				<div class="radio-inline">
-					<label>
-						<input name="type" type="radio"> Fresher
-					</label>
-				</div>
-				<div class="radio-inline">
-					<label>
-						<input name="type" type="radio"> Repeater
-					</label>
-				</div>
-			</div> -->
 		</fieldset>
 		<fieldset>
 			<legend>Documents</legend>
@@ -503,6 +446,7 @@ x<!DOCTYPE html>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="../js/datepicker.js"></script>
 <script src="../js/validate.js"></script>
+<script src="../js/regexValidation.js"></script>
 <script>
 	$(function() {
 		$('input[type=file]').click().change(function() {
@@ -514,6 +458,5 @@ x<!DOCTYPE html>
 		})
 	});
 </script>
-
 </body>
 </html>
