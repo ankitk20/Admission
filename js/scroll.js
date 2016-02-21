@@ -1,4 +1,4 @@
-$('main').scrollspy({target: ".navbar", offset: 50});
+$('main').scrollspy({ target: ".navbar", offset: 50 });
 
 // Add smooth scrolling to all links inside a navbar
 $("#theSpy a").on('click', function(event) {

@@ -6,7 +6,8 @@ header {
     padding: 25px 0;
 }
 
-.navbar, .nav-pills li a {
+.navbar,
+.nav-pills li a {
     border-radius: 0;
 }
 

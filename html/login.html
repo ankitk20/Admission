@@ -1,92 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
-<!-- Meta tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta charset="utf-8" />
-<!-- CSS -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="../css/template.css" rel="stylesheet" type="text/css" />
-<link href="../css/login.css" rel="stylesheet" type="text/css" />
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" rel="stylesheet" type="text/css" />
-<title>Admission Portal</title>
-
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/template.css" rel="stylesheet" type="text/css" />
+    <link href="../css/login.css" rel="stylesheet" type="text/css" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" rel="stylesheet" type="text/css" />
+    <title>Admission Portal</title>
 </head>
+
 <body onload="$('#loginModal').modal({backdrop: 'static', keyboard: false});">
-
-<!-- Modal -->
-<div id="loginModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4>Login</h4>
-      </div>
-      <form role="form" method="post">
-        <div class="modal-body">
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-              <input type="text" id="uName" name="uName" class="form-control" placeholder="Username" required="required" />
+    <!-- Modal -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Login</h4>
+                </div>
+                <form role="form" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" id="uName" name="uName" class="form-control" placeholder="Username" required="required" />
+                            </div>
+                            <span class="help-block">Your Application ID.</span>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                                <input type="text" id="mNo" name="mNo" class="form-control" placeholder="Passcode" required="required" />
+                            </div>
+                            <span class="help-block">The code you purchased at the college.</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
             </div>
-            <span class="help-block">Your Application ID.</span>
-            <br/>
-            <div class="input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
-              <input type="text" id="mNo" name="mNo" class="form-control" placeholder="Passcode" required="required" />
+        </div>
+    </div>
+    <header class="container-fluid" role="banner">
+        <img class="img-responsive" src="../images/header.png" alt="header" />
+    </header>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-            <span class="help-block">The code you purchased at the college.</span>
-          </div>
+            <div class="collapse navbar-collapse" id="theNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="intro.html">Home</a></li>
+                    <li><a href="#">Admission</a></li>
+                    <li><a href="#">Departments</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Placements</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
-        </div>
-      </form>
-    </div>
-
-  </div>
-</div>
-
-<header class="container-fluid" role="banner">
-  <img class="img-responsive" src="../images/header.png" alt="header" />
-</header>
-
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
-        <span class="sr-only">Toggle Navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="theNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="intro.html">Home</a></li>
-        <li><a href="#">Admission</a></li>
-        <li><a href="#">Departments</a></li>
-        <li><a href="#">Activities</a></li>
-        <li><a href="#">Placements</a></li>
-        <li><a href="#">About Us</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<main class="container-fluid">
-  <p class="lead text-center" id="demo">Something to lean on.</p>
-</main>
-
-<footer class="container-fluid text-center" role="footer">Brought to you by VESIT</footer>
-
-<!-- Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    </nav>
+    <main class="container-fluid">
+        <p class="lead text-center" id="demo">Something to lean on.</p>
+    </main>
+    <footer class="container-fluid text-center" role="footer">Brought to you by VESIT</footer>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
+
 </html>
