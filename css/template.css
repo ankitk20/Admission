@@ -19,5 +19,6 @@ header {
 footer {
     color: white;
     padding: 20px 0;
-    background-color: #101010;
+    background-color: #222;
+    border-color: #080808;
 }
