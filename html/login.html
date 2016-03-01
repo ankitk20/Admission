@@ -14,7 +14,7 @@
     <title>Admission Portal</title>
 </head>
 
-<body onload="$('#loginModal').modal({backdrop: 'static', keyboard: false});">
+<body>
     <!-- Modal -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -26,17 +26,17 @@
                 <form role="form" method="post">
                     <div class="modal-body">
                         <div class="form-group">
+                            <span class="help-block">Your Application ID.</span>
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                                 <input type="text" id="uName" name="uName" class="form-control" placeholder="Username" required="required" />
                             </div>
-                            <span class="help-block">Your Application ID.</span>
                             <br/>
+                            <span class="help-block">The code you purchased at the college.</span>
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
                                 <input type="text" id="mNo" name="mNo" class="form-control" placeholder="Passcode" required="required" />
                             </div>
-                            <span class="help-block">The code you purchased at the college.</span>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -79,6 +79,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+        $('#loginModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    })
+    </script>
 </body>
 
 </html>

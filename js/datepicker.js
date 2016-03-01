@@ -1,8 +1,7 @@
-$(document).ready(function() {
+$(function() {
     $('.datepicker').datepicker({
-        dateFormat: "dd-mm-yy",
-        changeMonth: true,
-        changeYear: true,
-        maxDate: 0
+        format: "dd-mm-yyyy",
+        autoclose: true,
+        startDate: 0
     });
 });
