@@ -13,11 +13,24 @@ header {
 
 .affix {
     top: 20px;
-    z-index: 9999 !important;
+    z-index: 9999;
 }
 
 footer {
-    color: white;
+    color: #9d9d9d;
+    margin: 25px 0 0;
     padding: 20px 0;
-    background-color: #101010;
+    background-color: #222;
+    border-color: #080808;
+}
+
+footer a,
+footer a:hover,
+footer a:visited,
+footer a:focus,
+footer a:active {
+    color: white;
+    text-decoration: none;
+    outline: 0;
+    background-color: transparent;
 }

@@ -15,40 +15,6 @@
 </head>
 
 <body>
-    <!-- Modal -->
-    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <form role="form" action="#" method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="text" id="uName" name="uName" class="form-control" placeholder="Username" required="required" />
-                            </div>
-                            <span id="usernameLabel" class="help-block"></span>
-                            <br/>
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
-                                <input type="text" id="mNo" name="mNo" class="form-control" placeholder="Passcode" required="required" />
-                            </div>
-                            <span id="passwordLabel" class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <header class="container-fluid" role="banner">
         <img class="img-responsive" src="../images/header.png" alt="header" />
     </header>
@@ -157,8 +123,8 @@
                     <li>
                         <a href="#">Login <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" data-toggle="modal" data-target="#loginModal" data-type="Admin">Admin</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#loginModal" data-type="Student">Student</a></li>
+                            <li><a href="#">Admin</a></li>
+                            <li><a href="#">Student</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -166,7 +132,24 @@
         </div>
     </nav>
     <main class="container-fluid">
-        <p class="lead text-center" id="demo">Something to lean on.</p>
+        <p class="lead">Contact Us</p>
+        <address>
+            <h4>Address</h4>
+            <strong>V. E. S. Institute of Technology</strong><br>
+            Hashu Advani Memorial Complex (HAMC),<br>
+            Collector's Colony, R C Marg,<br>
+            Chembur, Mumbai - 400 074<br>
+            <abbr title="Phone">P:</abbr> +91 (022) 61532518<br>
+            <abbr title="Fax">F:</abbr> +91 (022) 61532555<br>
+            Email: vesit@vsnl.com
+        </address>
+        <address>
+            <h4>Landmarks</h4>
+            <p>
+                Jhama Chowk (Chembur Camp)<br>
+                Near Municipal School (Collector’s Colony)
+            </p>
+        </address>
     </main>
     <footer class="container-fluid text-center" role="footer">
         <span class="glyphicon glyphicon-copyright-mark"></span>&nbsp;&nbsp;Brought to you by <a href="http://vesit.edu/">VESIT</a>
@@ -176,7 +159,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="../js/jquery.smartmenus.min.js"></script>
     <script src="../js/jquery.smartmenus.bootstrap.min.js"></script>
-    <script src="../js/modal.js"></script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <!-- CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="../css/jquery.smartmenus.bootstrap.css" rel="stylesheet" type="text/css">
     <link href="../css/template.css" rel="stylesheet" type="text/css" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" rel="stylesheet" type="text/css" />
@@ -31,11 +31,102 @@
             <div class="collapse navbar-collapse" id="theNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="intro.html">Home</a></li>
-                    <li class="active"><a href="#">Admission</a></li>
-                    <li><a href="#">Departments</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Placements</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="http://dte.org.in/">DTE</a></li>
+                    <li>
+                        <a href="#">Sindhi Admissions <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="admission-rules.html">Admission Rules</a></li>
+                            <li>
+                                <a href="#">Eligibility Criteria <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="eligibility/fe.html">F. E.</a></li>
+                                    <li><a href="eligibility/dse.html">D. S. E.</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">List of Documents <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="documents/fe.html">F. E.</a></li>
+                                    <li><a href="documents/dse.html">D. S. E.</a></li>
+                                    <li><a href="documents/mca.html">M. C. A.</a></li>
+                                    <li><a href="documents/me.html">M. E.</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Fee Structure <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="fee-structure/fe.html">F. E.</a></li>
+                                    <li><a href="fee-structure/dse.html">D. S. E.</a></li>
+                                    <li><a href="fee-structure/mca.html">M. C. A.</a></li>
+                                    <li><a href="fee-structure/me.html">M. E.</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Admission Schedule <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="admission-schedule/fe.html">F. E.</a></li>
+                                    <li><a href="admission-schedule/dse.html">D. S. E.</a></li>
+                                    <li><a href="admission-schedule/mca.html">M. C. A.</a></li>
+                                    <li><a href="admission-schedule/me.html">M. E.</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Admission Procedure <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="admission-procedure/fe.html">F. E.</a></li>
+                                    <li><a href="admission-procedure/dse.html">D. S. E.</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">CAP Admissions <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">E-CAP</a></li>
+                            <li>
+                                <a href="#">List of Documents <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">F. E.</a></li>
+                                    <li><a href="#">D. S. E.</a></li>
+                                    <li><a href="#">M. C. A.</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Fee Structure <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">F. E.</a></li>
+                                    <li><a href="#">D. S. E.</a></li>
+                                    <li><a href="#">M. E.</a></li>
+                                    <li><a href="#">M. C. A.</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Admission Schedule <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">F. E.</a></li>
+                                    <li><a href="#">M. C. A.</a></li>
+                                    <li><a href="#">M. E.</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Online Application <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="forms/fe.html">F. E.</a></li>
+                            <li><a href="forms/dse.html">D. S. E.</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Login <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Admin</a></li>
+                            <li><a href="#">Student</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -72,7 +163,8 @@
                 </div>
                 <div class="form-group">
                     <label for="state">State</label>
-                    <select id="state" name="state" class="form-control" required>
+                    <select id="state" name="state" class="form-control selectpicker" required>
+                        <option selected></option>
                         <option>Delhi</option>
                         <option>Maharashtra</option>
                     </select>
@@ -80,7 +172,8 @@
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
-                    <select id="city" name="city" class="form-control" required>
+                    <select id="city" name="city" class="form-control selectpicker" required>
+                        <option selected></option>
                         <option>Delhi</option>
                         <option>Mumbai</option>
                     </select>
@@ -93,7 +186,8 @@
                 </div>
                 <div class="form-group">
                     <label for="gender">Gender</label>
-                    <select id="gender" name="gender" class="form-control" required>
+                    <select id="gender" name="gender" class="form-control selectpicker" required>
+                        <option selected></option>
                         <option>Male</option>
                         <option>Female</option>
                     </select>
@@ -101,10 +195,7 @@
                 </div>
                 <div class="form-group">
                     <label for="dob">Date of Birth</label>
-                    <div class="input-group">
-                        <input id="dob" name="dob" class="datepicker form-control" type="text" required>
-                        <label for="dob" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span></label>
-                    </div>
+                    <input id="dob" name="dob" class="form-control datepicker" type="text" readonly required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group">
@@ -133,29 +224,21 @@
                 <div class="form-group">
                     <label>Category</label>
                     <br/>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="category" type="radio"> Open
+                    <div class="btn-group btn-group-lg" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name="category" type="radio" autocomplete="off"> Open
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="category" type="radio"> OBC
+                        <label class="btn btn-default">
+                            <input name="category" type="radio" autocomplete="off"> OBC
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="category" type="radio"> SC
+                        <label class="btn btn-default">
+                            <input name="category" type="radio" autocomplete="off"> SC
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="category" type="radio"> ST
+                        <label class="btn btn-default">
+                            <input name="category" type="radio" autocomplete="off"> ST
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="category" type="radio"> Other
+                        <label class="btn btn-default">
+                            <input name="category" type="radio" autocomplete="off"> Other
                         </label>
                     </div>
                 </div>
@@ -165,7 +248,7 @@
                     </label>
                     <div class="input-group">
                         <input class="form-control" type="text" readonly>
-                        <span class="input-group-addon btn btnFile">Browse</span>
+                        <span class="input-group-btn btnFile"><button class="btn btn-default" type="button">Browse</button></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -174,7 +257,7 @@
                     </label>
                     <div class="input-group">
                         <input class="form-control" type="text" readonly>
-                        <span class="input-group-addon btn btnFile">Browse</span>
+                        <span class="input-group-btn btnFile"><button class="btn btn-default" type="button">Browse</button></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -183,7 +266,7 @@
                     </label>
                     <div class="input-group">
                         <input class="form-control" type="text" readonly>
-                        <span class="input-group-addon btn btnFile">Browse</span>
+                        <span class="input-group-btn btnFile"><button class="btn btn-default" type="button">Browse</button></span>
                     </div>
                 </div>
             </fieldset>
@@ -240,8 +323,8 @@
                 </div>
                 <div class="form-group">
                     <label for="sscYear">Year Of Passing</label>
-                    <select id="sscYear" class="form-control">
-                        <option value=""></option>
+                    <select id="sscYear" class="form-control selectpicker">
+                        <option selected></option>
                         <option>2010</option>
                         <option>2011</option>
                         <option>2012</option>
@@ -316,8 +399,8 @@
                 </div>
                 <div class="form-group">
                     <label for="hscYear">Year Of Passing</label>
-                    <select id="hscYear" class="form-control">
-                        <option></option>
+                    <select id="hscYear" class="form-control selectpicker">
+                        <option selected></option>
                         <option>2012</option>
                         <option>2013</option>
                         <option>2014</option>
@@ -367,121 +450,96 @@
                 <div class="form-group">
                     <label>Admission Category</label>
                     <br/>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="appCategory" type="radio"> Institute Level
+                    <div class="btn-group btn-group-lg" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name="appCategory" type="radio" autocomplete="off"> Institute Level
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="appCategory" type="radio"> CAP
+                        <label class="btn btn-default">
+                            <input name="appCategory" type="radio" autocomplete="off"> CAP
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="appCategory" type="radio"> Minority
+                        <label class="btn btn-default">
+                            <input name="appCategory" type="radio" autocomplete="off"> Minority
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Course</label>
                     <br/>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="course" type="radio"> COMP 1
+                    <div class="btn-group btn-group-lg" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input name="course" type="radio" autocomplete="off"> COMP 1
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="course" type="radio"> COMP 2
+                        <label class="btn btn-default">
+                            <input name="course" type="radio" autocomplete="off"> COMP 2
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="course" type="radio"> INFT
+                        <label class="btn btn-default">
+                            <input name="course" type="radio" autocomplete="off"> INFT
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="course" type="radio"> EXTC
+                        <label class="btn btn-default">
+                            <input name="course" type="radio" autocomplete="off"> EXTC
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="course" type="radio"> ETRX
+                        <label class="btn btn-default">
+                            <input name="course" type="radio" autocomplete="off"> ETRX
                         </label>
-                    </div>
-                    <div class="radio-inline">
-                        <label>
-                            <input name="course" type="radio"> INST
+                        <label class="btn btn-default">
+                            <input name="course" type="radio" autocomplete="off"> INST
                         </label>
                     </div>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Documents</legend>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> ADDRESS PROOF
+                <div class="btn-group btn-group-lg" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="checkbox" autocomplete="off"> ADDRESS PROOF
                     </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> SSC
+                    <label class="btn btn-default">
+                        <input type="checkbox" autocomplete="off"> SSC
                     </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> HSC
+                    <label class="btn btn-default">
+                        <input type="checkbox" autocomplete="off"> HSC
                     </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> DOMICILE
+                    <label class="btn btn-default">
+                        <input type="checkbox" autocomplete="off"> DOMICILE
                     </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> JEE
+                    <label class="btn btn-default">
+                        <input type="checkbox" autocomplete="off"> JEE
                     </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> AFFIDAVIT
+                    <label class="btn btn-default">
+                        <input type="checkbox" autocomplete="off"> AFFIDAVIT
                     </label>
                 </div>
             </fieldset>
-            <hr/>
-            <fieldset class="form-group">
-                <label>
-                    <input type="checkbox"> I Accept All Rules And All Documents Are Valid
-                </label>
-            </fieldset>
-            <button class="btn btn-default" type="submit">Accept And Submit</button>
-            <br/>
-            <br/>
+            <div class="no-print">
+                <hr/>
+                <fieldset class="form-group">
+                    <label class="checkbox">
+                        <input type="checkbox" autocomplete="off" required> I Accept All Rules And All Documents Are Valid
+                    </label>
+                </fieldset>
+                <button class="btn btn-default btn-lg" type="submit">Accept And Submit</button>
+                <nav>
+                    <ul class="pager">
+                        <li><a href="#">Previous</a></li>
+                        <li><a href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
         </form>
     </main>
-    <footer class="container-fluid text-center" role="footer">Brought to you by VESIT</footer>
+    <footer class="container-fluid text-center" role="footer">
+        <span class="glyphicon glyphicon-copyright-mark"></span>&nbsp;&nbsp;Brought to you by <a href="http://vesit.edu/">VESIT</a>
+    </footer>
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="../js/datepicker.js"></script>
+    <script src="../js/jquery.smartmenus.min.js"></script>
+    <script src="../js/jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="../js/onload.js"></script>
     <script src="../js/validate.js"></script>
-    <script src="../js/regexValidation.js"></script>
-    <script>
-    $(function() {
-        $('input[type=file]').click().change(function() {
-            $(this).parent().next().children().first().val($(this).val());
-        });
-
-        $('.btnFile').click(function() {
-            $(this).parent().prev().children().click();
-        })
-    });
-    </script>
 </body>
 
 </html>

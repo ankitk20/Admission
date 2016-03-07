@@ -5,8 +5,8 @@ $(function() {
             $(element).siblings('.glyphicon').addClass('glyphicon-remove').removeClass('glyphicon-ok');
         },
         unhighlight: function(element) {
-            $(element).closest('.form-group').addClass('has-success has-feedback').removeClass('has-error');
-            $(element).siblings('.glyphicon').addClass('glyphicon-ok').removeClass('glyphicon-remove');
+            $(element).closest('.form-group').removeClass('has-error');
+            $(element).siblings('.glyphicon').removeClass('glyphicon-remove');
         },
         errorElement: 'span',
         errorClass: 'help-block',
