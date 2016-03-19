@@ -10,3 +10,33 @@ $(function() {
         modal.find('.modal-body #passwordLabel').text(recipient == "Admin" ? "Your password" : "Your secret code");
     });
 });
+
+    /* prevents the escape of tabbed-focus out of the modal */ 
+
+            $('#loginModal :input:first').focus();
+
+            $('#loginModal :input:last').on('keydown', function (e) { 
+                if ($("this:focus") && (e.which == 9)) {
+                    e.preventDefault();
+                    $('#loginModal :input:first').focus();
+                }
+            });
+   
+
+        /* modal validation using ajax*/
+ 
+        $('#btnLogin').click(function(){
+            $userName = $('#uName').val();
+            $password = $('#passcode').val();
+
+            $.ajax({
+                type:'POST',
+                url:'../php/authenticateUser.php',
+                data:{uName:$userName,passcode:$password},
+                datatype:'html',
+                success:function(data){
+                    $('#loginModal').modal(data);
+              }   
+            }).error(function(){alert('ssssssss');});
+        });   
+ 

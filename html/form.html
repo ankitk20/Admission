@@ -25,7 +25,7 @@
                 <div class="modal-header">
                     <h4>Login</h4>
                 </div>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" role="form" method="post">
+                <form action="" role="form" method="post">
                     <div class="modal-body">
                         <div class="form-group">
                             <div class="input-group">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                        <input id="btnLogin" type="button" class="btn btn-lg btn-primary btn-block" value="Login" />
                     </div>
                 </form>
             </div>
@@ -573,17 +573,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
     <script src="../js/onload.js"></script>
     <script src="../js/validate.js"></script>
-    /* prevents the escape of tabbed-focus out of the modal */
-    <script>
-    $('#loginModal :input:first').focus();
-
-    $('#loginModal :input:last').on('keydown', function(e) {
-        if ($("this:focus") && (e.which == 9)) {
-            e.preventDefault();
-            $('#loginModal :input:first').focus();
-        }
-    });
-    </script>
+    <script src="../js/modal.js"></script>
 </body>
 
 </html>
