@@ -16,7 +16,38 @@
     <title>Admission Portal</title>
 </head>
 
-<body>
+<body onload="$('#loginModal').modal({backdrop: 'static', keyboard: false});">
+    <!-- Modal -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Login</h4>
+                </div>
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" role="form" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" id="uName" name="uName" class="form-control" placeholder="ApplicationID" required="required" />
+                            </div>
+                            <span class="help-block">Your Application ID.</span>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                                <input type="text" id="passcode" name="passcode" class="form-control" placeholder="Passcode" required="required" />
+                            </div>
+                            <span class="help-block">The code you purchased at the college.</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <header class="container-fluid" role="banner">
         <img class="img-responsive" src="../images/header.png" alt="header" />
     </header>
@@ -542,6 +573,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
     <script src="../js/onload.js"></script>
     <script src="../js/validate.js"></script>
+    /* prevents the escape of tabbed-focus out of the modal */
+    <script>
+    $('#loginModal :input:first').focus();
+
+    $('#loginModal :input:last').on('keydown', function(e) {
+        if ($("this:focus") && (e.which == 9)) {
+            e.preventDefault();
+            $('#loginModal :input:first').focus();
+        }
+    });
+    </script>
 </body>
 
 </html>
