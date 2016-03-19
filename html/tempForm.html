@@ -12,51 +12,13 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" rel="stylesheet" type="text/css" />
     <title>Admission Portal</title>
-    <style>
-    @media (min-width: 1000px) {
-        .container {
-            width: 70%;
-        }
-    }
-    </style>
 </head>
 
-<body onload="$('#loginModal').modal({backdrop: 'static', keyboard: false});">
-    <!-- Modal -->
-    <div id="loginModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>Login</h4>
-                </div>
-                <form role="form" method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="text" id="uName" name="uName" class="form-control" placeholder="Username" required="required" />
-                            </div>
-                            <span class="help-block">Your Application ID.</span>
-                            <br/>
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
-                                <input type="text" id="mNo" name="mNo" class="form-control" placeholder="Passcode" required="required" />
-                            </div>
-                            <span class="help-block">The code you purchased at the college.</span>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+<body>
     <header class="container-fluid" role="banner">
         <img class="img-responsive" src="../images/header.png" alt="header" />
     </header>
-    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
@@ -86,7 +48,7 @@
                 <div class="form-group">
                     <label for="fName">First Name</label>
                     <input type="text" id="fName" name="fName" class="form-control" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="false"></span>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group">
                     <label for="mName">Middle Name</label>
@@ -96,11 +58,6 @@
                 <div class="form-group">
                     <label for="lName">Last Name</label>
                     <input type="text" id="lName" name="lName" class="form-control" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="fName">Father's name</label>
-                    <input type="text" id="fName" name="fName" class="form-control">
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group">
@@ -513,10 +470,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="../js/datepicker.js"></script>
     <script src="../js/validate.js"></script>
+    <script src="../js/regexValidation.js"></script>
     <script>
     $(function() {
         $('input[type=file]').click().change(function() {
-            $(this).parent().next().children().first().val($(this).val())
+            $(this).parent().next().children().first().val($(this).val());
         });
 
         $('.btnFile').click(function() {
