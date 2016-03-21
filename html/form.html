@@ -18,7 +18,7 @@
 
 <body onload="$('#loginModal').modal({backdrop: 'static', keyboard: false});">
     <!-- Modal -->
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input id="btnLogin" type="button" class="btn btn-lg btn-primary btn-block" value="Login" />
+                        <button id="btnLogin" type="button" class="btn btn-lg btn-primary btn-block">Login</button>
                     </div>
                 </form>
             </div>
@@ -153,13 +153,7 @@
                     <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#">Login <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Admin</a></li>
-                            <li><a href="#">Student</a></li>
-                        </ul>
-                    </li>
+                    <button type="button" class="btn btn-link btn-lg" >Logout</button>"></button>
                 </ul>
             </div>
         </div>
@@ -574,6 +568,7 @@
     <script src="../js/onload.js"></script>
     <script src="../js/validate.js"></script>
     <script src="../js/modal.js"></script>
+
 </body>
 
 </html>

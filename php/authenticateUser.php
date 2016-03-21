@@ -1,17 +1,31 @@
 <?php
 
-		$dbConn = mysqli_connect('localhost',<username>,<password>,<database_name>);
-
-		$query = "select DISTINCT 1 FROM authenticate WHERE appID ='{$_POST['uName'] }' and password='{$_POST['passcode']}';";
+		$dbConn = mysqli_connect('localhost','root','','registration');
+		$userID = mysqli_real_escape_string($dbConn,htmlspecialchars($_POST['uName']));
+		$password = mysqli_real_escape_string($dbConn,htmlspecialchars($_POST['passcode']));
 	
+		$query = "select appID FROM signedupuser WHERE appID ='$userID';";	
 		$result = mysqli_query($dbConn,$query);
 
-		if( mysqli_num_rows($result) > 0 ){
+		if( mysqli_num_rows($result) == 0 ){
+			
+			$query = "select * FROM applicationid WHERE appid ='$userID';";		
+			$result = mysqli_query($dbConn,$query);
 
-			echo 'hide';
-				
+			 if( mysqli_num_rows($result) == 1 ){
+
+				$query = "select * FROM password WHERE password ='$password';";		
+				$result = mysqli_query($dbConn,$query);
+
+				if( mysqli_num_rows($result) == 1 ){
+					$query = "insert into signedupuser values ('$userID','$password');";	
+					mysqli_query($dbConn,$query);
+					echo "hide";	
+				}
+			}
+			
 		}else{
-			echo 'show';
+			echo "hide";
 		}
 
 		mysqli_close($dbConn);
