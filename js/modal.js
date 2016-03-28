@@ -13,13 +13,11 @@ $(function() {
 
 
     /* modal not displayed if not logged out*/
-    $.ajax({
+     $.ajax({
         url: '../php/autoLogin.php',
         success: function(data) {
-            if (data == "show") {
+            if ( $.trim(data) === "show") {
                 $('#loginModal').modal({ backdrop: 'static', keyboard: false });
-            } else {
-                $('#loginModal').modal(data);
             }
         }
     }).error('kuch to gadbad hai !! :| ');
