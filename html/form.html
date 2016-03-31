@@ -63,404 +63,27 @@
             </div>
             <div class="collapse navbar-collapse" id="theNavbar">
                 <!-- TODO fix navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" id="btnLogout">Logout</a></li>
-                </ul>
+                <div class="container">
+                    <div class="row">
+                        <div class="progress col-xs-11" style="margin-top: 1.1em">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 0%">
+                                <span class="sr-only">0% complete</span>
+                            </div>
+                        </div>
+                        <ul class="col-xs-1 nav navbar-nav navbar-right">
+                            <li><a href="#" id="btnLogout">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
     <main class="container">
         <form role="form" id="admForm" method="post" action="#">
-            <fieldset>
-                <legend>Personal Info</legend>
-                <!-- Name Section -->
-                <div class="form-group">
-                    <label for="fName">First Name</label>
-                    <input type="text" id="fName" name="fName" class="form-control" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="mName">Middle Name</label>
-                    <input type="text" id="mName" name="mName" class="form-control">
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="lName">Last Name</label>
-                    <input type="text" id="lName" name="lName" class="form-control" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="momName">Mother's name</label>
-                    <input type="text" id="momName" name="momName" class="form-control">
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <!-- Address Section -->
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <textarea id="address" name="address" class="form-control" rows="4" style="resize: vertical" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="state">State</label>
-                    <select id="state" name="state" class="form-control selectpicker" required>
-                        <option selected></option>
-                        <option>Delhi</option>
-                        <option>Maharashtra</option>
-                    </select>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <select id="city" name="city" class="form-control selectpicker" required>
-                        <option selected></option>
-                        <option>Delhi</option>
-                        <option>Mumbai</option>
-                    </select>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="pincode">Pin Code</label>
-                    <input id="pincode" name="pincode" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select id="gender" name="gender" class="form-control selectpicker" required>
-                        <option selected></option>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="dob">Date of Birth</label>
-                    <input id="dob" name="dob" class="form-control datepicker" type="text" readonly required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="religion">Religion</label>
-                    <input id="religion" name="religion" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="mobNo">Mobile number</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">+ 91</span>
-                        <input id="mobNo" name="mobNo" class="form-control digits" type="text" required>
-                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail Id</label>
-                    <input id="email" name="email" class="form-control" type="email" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="altEmail">Alternate E-mail Id</label>
-                    <input id="altEmail" name="altEmail" class="form-control" type="email">
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label>Category</label>
-                    <br/>
-                    <div class="btn-group btn-group-lg" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input name="category" type="radio" autocomplete="off"> Open
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="category" type="radio" autocomplete="off"> OBC
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="category" type="radio" autocomplete="off"> SC
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="category" type="radio" autocomplete="off"> ST
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="category" type="radio" autocomplete="off"> Other
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="photo">Photo
-                        <input id="photo" name="photo" type="file" style="display:none" required>
-                    </label>
-                    <div class="input-group">
-                        <input class="form-control" type="text" readonly>
-                        <span class="input-group-btn btnFile"><button class="btn btn-default" type="button">Browse</button></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="sign">Signature
-                        <input id="sign" name="sign" type="file" style="display:none" required>
-                    </label>
-                    <div class="input-group">
-                        <input class="form-control" type="text" readonly>
-                        <span class="input-group-btn btnFile"><button class="btn btn-default" type="button">Browse</button></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="fatherSign">Father's Signature
-                        <input id="fatherSign" name="fatherSign" type="file" style="display:none" required>
-                    </label>
-                    <div class="input-group">
-                        <input class="form-control" type="text" readonly>
-                        <span class="input-group-btn btnFile"><button class="btn btn-default" type="button">Browse</button></span>
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend>Academic Details</legend>
-                <h3>SSC</h3>
-                <div class="form-group">
-                    <label for="sscSchool">Name Of School</label>
-                    <input id="sscSchool" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="sscNo">Seat number</label>
-                    <input id="sscNo" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="sscEng">English</label>
-                    <div class="input-group">
-                        <input id="sscEng" class="form-control digits sscMks" type="text" required>
-                        <span class="input-group-addon">/ 100</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="sscMat">Mathematics</label>
-                    <div class="input-group">
-                        <input id="sscMat" class="form-control digits sscMks" type="text" required>
-                        <span class="input-group-addon">/ 150</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="sscSci">Science</label>
-                    <div class="input-group">
-                        <input id="sscSci" class="form-control digits sscMks" type="text" required>
-                        <span class="input-group-addon">/ 150</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="sscObtMks">Marks Obtained</label>
-                    <p id="sscObtMks" class="form-control-static"></p>
-                </div>
-                <div class="form-group">
-                    <label for="sscTotMks">Total Marks</label>
-                    <p id="sscTotMks" class="form-control-static">400</p>
-                </div>
-                <div class="form-group">
-                    <label for="sscPer">Percentage</label>
-                    <p id="sscPer" class="form-control-static"></p>
-                </div>
-                <div class="form-group">
-                    <label for="sscBoard">Board Name</label>
-                    <input id="sscBoard" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="sscYear">Year Of Passing</label>
-                    <select id="sscYear" class="form-control selectpicker">
-                        <option selected></option>
-                        <option>2010</option>
-                        <option>2011</option>
-                        <option>2012</option>
-                        <option>2013</option>
-                        <option>2014</option>
-                    </select>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <hr/>
-                <h3>HSC</h3>
-                <div class="form-group">
-                    <label for="hscSchool">Name Of College</label>
-                    <input id="hscSchool" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="hscNo">Seat number</label>
-                    <input id="hscNo" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="hscEng">English</label>
-                    <div class="input-group">
-                        <input id="hscEng" class="form-control digits hscMks" type="text" required>
-                        <span class="input-group-addon">/ 100</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="hscMat">Mathematics</label>
-                    <div class="input-group">
-                        <input id="hscMat" class="form-control digits hscMks" type="text" required>
-                        <span class="input-group-addon">/ 100</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="hscPhy">Physics</label>
-                    <div class="input-group">
-                        <input id="hscPhy" class="form-control digits hscMks" type="text" required>
-                        <span class="input-group-addon">/ 100</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="hscChe">Chemistry</label>
-                    <div class="input-group">
-                        <input id="hscChe" class="form-control digits hscMks" type="text" required>
-                        <span class="input-group-addon">/ 100</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="hscVoc">CS / Electronics / IT</label>
-                    <div class="input-group">
-                        <input id="hscVoc" class="form-control digits hscMks" type="text" required>
-                        <span class="input-group-addon">/ 200</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="hscObtMks">Marks Obtained</label>
-                    <p id="hscObtMks" class="form-control-static"></p>
-                </div>
-                <div class="form-group">
-                    <label for="hscTotMks">Total Marks</label>
-                    <p id="hscTotMks" class="form-control-static">600</p>
-                </div>
-                <div class="form-group">
-                    <label for="hscPer">Percentage</label>
-                    <p id="hscPer" class="form-control-static"></p>
-                </div>
-                <div class="form-group">
-                    <label for="hscBoard">Board Name</label>
-                    <input id="hscBoard" class="form-control" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="hscYear">Year Of Passing</label>
-                    <select id="hscYear" class="form-control selectpicker">
-                        <option selected></option>
-                        <option>2012</option>
-                        <option>2013</option>
-                        <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
-                    </select>
-                </div>
-                <hr/>
-                <h3>JEE</h3>
-                <div class="form-group">
-                    <label for="jeePhy">Physics</label>
-                    <div class="input-group">
-                        <input id="jeePhy" class="form-control digits jeeMks" type="text" required>
-                        <span class="input-group-addon">/ 120</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="jeeChe">Chemistry</label>
-                    <div class="input-group">
-                        <input id="jeeChe" class="form-control digits jeeMks" type="text" required>
-                        <span class="input-group-addon">/ 120</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="jeeMat">Mathematics</label>
-                    <div class="input-group">
-                        <input id="jeeMat" class="form-control digits jeeMks" type="text" required>
-                        <span class="input-group-addon">/ 120</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="jeeObtMks">Marks Obtained</label>
-                    <p id="jeeObtMks" class="form-control-static"></p>
-                </div>
-                <div class="form-group">
-                    <label for="jeeTotMks">Total Marks</label>
-                    <p id="jeeTotMks" class="form-control-static">360</p>
-                </div>
-                <div class="form-group">
-                    <label for="jeePer">Percentile</label>
-                    <input id="jeePer" class="form-control number" type="text" required>
-                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend>Applying For</legend>
-                <div class="form-group">
-                    <label>Admission Category</label>
-                    <br/>
-                    <div class="btn-group btn-group-lg" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input name="appCategory" type="radio" autocomplete="off"> Institute Level
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="appCategory" type="radio" autocomplete="off"> CAP
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="appCategory" type="radio" autocomplete="off"> Minority
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Course</label>
-                    <br/>
-                    <div class="btn-group btn-group-lg" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input name="course" type="radio" autocomplete="off"> COMP 1
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="course" type="radio" autocomplete="off"> COMP 2
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="course" type="radio" autocomplete="off"> INFT
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="course" type="radio" autocomplete="off"> EXTC
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="course" type="radio" autocomplete="off"> ETRX
-                        </label>
-                        <label class="btn btn-default">
-                            <input name="course" type="radio" autocomplete="off"> INST
-                        </label>
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend>Documents</legend>
-                <div class="btn-group btn-group-lg" data-toggle="buttons">
-                    <label class="btn btn-default">
-                        <input type="checkbox" autocomplete="off"> ADDRESS PROOF
-                    </label>
-                    <label class="btn btn-default">
-                        <input type="checkbox" autocomplete="off"> SSC
-                    </label>
-                    <label class="btn btn-default">
-                        <input type="checkbox" autocomplete="off"> HSC
-                    </label>
-                    <label class="btn btn-default">
-                        <input type="checkbox" autocomplete="off"> DOMICILE
-                    </label>
-                    <label class="btn btn-default">
-                        <input type="checkbox" autocomplete="off"> JEE
-                    </label>
-                    <label class="btn btn-default">
-                        <input type="checkbox" autocomplete="off"> AFFIDAVIT
-                    </label>
-                </div>
-            </fieldset>
+            <div class="page-content"></div>
             <div class="no-print">
-                <hr/>
-                <fieldset class="form-group">
-                    <label class="checkbox">
-                        <input type="checkbox" autocomplete="off" required> I Accept All Rules And All Documents Are Valid
-                    </label>
-                </fieldset>
-                <button class="btn btn-default btn-lg" type="submit">Accept And Submit</button>
-                <nav>
-                    <ul class="pager">
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#">Next</a></li>
-                    </ul>
+                <nav class="text-center">
+                    <ul class="pagination pagination-lg"></ul>
                 </nav>
             </div>
         </form>
@@ -470,15 +93,15 @@
     </footer>
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="../js/jquery.smartmenus.min.js"></script>
     <script src="../js/jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="../js/jquery.twbsPagination.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
     <script src="../js/onload.js"></script>
-    <script src="../js/validate.js"></script>
     <script src="../js/modal.js"></script>
+    <script src="../js/pagination.js"></script>
 </body>
 
 </html>

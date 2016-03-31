@@ -1,0 +1,30 @@
+<fieldset id="documents">
+    <legend>Documents</legend>
+    <div class="btn-group btn-group-lg" data-toggle="buttons">
+        <label class="btn btn-default">
+            <input type="checkbox" autocomplete="off"> ADDRESS PROOF
+        </label>
+        <label class="btn btn-default">
+            <input type="checkbox" autocomplete="off"> SSC
+        </label>
+        <label class="btn btn-default">
+            <input type="checkbox" autocomplete="off"> HSC
+        </label>
+        <label class="btn btn-default">
+            <input type="checkbox" autocomplete="off"> DOMICILE
+        </label>
+        <label class="btn btn-default">
+            <input type="checkbox" autocomplete="off"> JEE
+        </label>
+        <label class="btn btn-default">
+            <input type="checkbox" autocomplete="off"> AFFIDAVIT
+        </label>
+    </div>
+</fieldset>
+<hr/>
+<fieldset class="form-group">
+    <label class="checkbox">
+        <input type="checkbox" autocomplete="off" required> I Accept All Rules And All Documents Are Valid
+    </label>
+</fieldset>
+<button class="btn btn-default btn-lg" type="submit">Accept And Submit</button>

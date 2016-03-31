@@ -1,0 +1,175 @@
+<fieldset id="academic-details">
+    <legend>Academic Details</legend>
+    <h3>SSC</h3>
+    <div class="form-group">
+        <label for="sscSchool">Name Of School</label>
+        <input id="sscSchool" class="form-control" type="text" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="sscNo">Seat number</label>
+        <input id="sscNo" class="form-control" type="text" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="sscEng">English</label>
+        <div class="input-group">
+            <input id="sscEng" class="form-control digits sscMks" type="text" required>
+            <span class="input-group-addon">/ 100</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sscMat">Mathematics</label>
+        <div class="input-group">
+            <input id="sscMat" class="form-control digits sscMks" type="text" required>
+            <span class="input-group-addon">/ 150</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sscSci">Science</label>
+        <div class="input-group">
+            <input id="sscSci" class="form-control digits sscMks" type="text" required>
+            <span class="input-group-addon">/ 150</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sscObtMks">Marks Obtained</label>
+        <p id="sscObtMks" class="form-control-static"></p>
+    </div>
+    <div class="form-group">
+        <label for="sscTotMks">Total Marks</label>
+        <p id="sscTotMks" class="form-control-static">400</p>
+    </div>
+    <div class="form-group">
+        <label for="sscPer">Percentage</label>
+        <p id="sscPer" class="form-control-static"></p>
+    </div>
+    <div class="form-group">
+        <label for="sscBoard">Board Name</label>
+        <input id="sscBoard" class="form-control" type="text" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="sscYear">Year Of Passing</label>
+        <select id="sscYear" class="form-control selectpicker">
+            <option selected></option>
+            <option>2010</option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+        </select>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <hr/>
+    <h3>HSC</h3>
+    <div class="form-group">
+        <label for="hscSchool">Name Of College</label>
+        <input id="hscSchool" class="form-control" type="text" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="hscNo">Seat number</label>
+        <input id="hscNo" class="form-control" type="text" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="hscEng">English</label>
+        <div class="input-group">
+            <input id="hscEng" class="form-control digits hscMks" type="text" required>
+            <span class="input-group-addon">/ 100</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hscMat">Mathematics</label>
+        <div class="input-group">
+            <input id="hscMat" class="form-control digits hscMks" type="text" required>
+            <span class="input-group-addon">/ 100</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hscPhy">Physics</label>
+        <div class="input-group">
+            <input id="hscPhy" class="form-control digits hscMks" type="text" required>
+            <span class="input-group-addon">/ 100</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hscChe">Chemistry</label>
+        <div class="input-group">
+            <input id="hscChe" class="form-control digits hscMks" type="text" required>
+            <span class="input-group-addon">/ 100</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hscVoc">CS / Electronics / IT</label>
+        <div class="input-group">
+            <input id="hscVoc" class="form-control digits hscMks" type="text" required>
+            <span class="input-group-addon">/ 200</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="hscObtMks">Marks Obtained</label>
+        <p id="hscObtMks" class="form-control-static"></p>
+    </div>
+    <div class="form-group">
+        <label for="hscTotMks">Total Marks</label>
+        <p id="hscTotMks" class="form-control-static">600</p>
+    </div>
+    <div class="form-group">
+        <label for="hscPer">Percentage</label>
+        <p id="hscPer" class="form-control-static"></p>
+    </div>
+    <div class="form-group">
+        <label for="hscBoard">Board Name</label>
+        <input id="hscBoard" class="form-control" type="text" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="hscYear">Year Of Passing</label>
+        <select id="hscYear" class="form-control selectpicker">
+            <option selected></option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+        </select>
+    </div>
+    <hr/>
+    <h3>JEE</h3>
+    <div class="form-group">
+        <label for="jeePhy">Physics</label>
+        <div class="input-group">
+            <input id="jeePhy" class="form-control digits jeeMks" type="text" required>
+            <span class="input-group-addon">/ 120</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="jeeChe">Chemistry</label>
+        <div class="input-group">
+            <input id="jeeChe" class="form-control digits jeeMks" type="text" required>
+            <span class="input-group-addon">/ 120</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="jeeMat">Mathematics</label>
+        <div class="input-group">
+            <input id="jeeMat" class="form-control digits jeeMks" type="text" required>
+            <span class="input-group-addon">/ 120</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="jeeObtMks">Marks Obtained</label>
+        <p id="jeeObtMks" class="form-control-static"></p>
+    </div>
+    <div class="form-group">
+        <label for="jeeTotMks">Total Marks</label>
+        <p id="jeeTotMks" class="form-control-static">360</p>
+    </div>
+    <div class="form-group">
+        <label for="jeePer">Percentile</label>
+        <input id="jeePer" class="form-control number" type="text" required>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+</fieldset>
