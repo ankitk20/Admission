@@ -1,37 +1,41 @@
 var setPage = function(page) {
     var pageURL;
     var progress;
+
     if (page === 1) {
-        progress = 0;
-        pageURL = "personal.txt";
+        progress = "personal";
+        pageURL = "personal.php";
     } else if (page === 2) {
-        progress = 25;
-        pageURL = "academic.txt";
+        progress = "academic";
+        pageURL = "academic.php";
     } else if (page === 3) {
-        progress = 50;
-        pageURL = "misc.txt";
+        progress = "misc";
+        pageURL = "misc.php";
     } else if (page === 4) {
-        progress = 75;
-        pageURL = "documents.txt";
+        progress = "documents";
+        pageURL = "documents.php";
     }
 
     $.ajax({
         url: "form-pages/" + pageURL,
+        async: false,
         success: function(data) {
             $(".page-content").html(data);
-            $(".progress-bar").css("width", progress + "%");
-            $(".progress-bar>span").text(progress + "% complete");
+            var cur = $("#" + progress);
+            cur.addClass("active").removeClass("disabled");
+            cur.siblings().not(cur.nextAll()).addClass("completed");
         },
         error: function() { alert("Couldn't read file"); }
     });
 };
 
 $(function() {
-    $(".pagination").twbsPagination({
-        totalPages: 4,
-        onPageClick: function(event, page) {
-            console.log(page);
+    setPage(1);
+    $("#jqpagination").jqPagination({
+        max_page: 4,
+        paged: function(page) {
             setPage(page);
+            validate(page);
         }
     });
 });
