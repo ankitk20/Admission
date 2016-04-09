@@ -1,59 +1,102 @@
-$(function() {
-    $.validator.setDefaults({
-        highlight: function(element) {
-            $(element).closest('.form-group').addClass('has-error has-feedback');
-            $(element).siblings('.glyphicon').addClass('glyphicon-remove').removeClass('glyphicon-ok');
+var validationRules = {
+    1: {
+        name: {
+            identifier: 'name',
+            rules: [{
+                type: 'empty',
+                prompt: "This field is required"
+            }, {
+                type: 'regExp[/^[a-zA-Z]{3,20}$/]',
+                prompt: "Name should contain 3 to 20 alphabets"
+            }]
         },
-        unhighlight: function(element) {
-            $(element).closest('.form-group').removeClass('has-error');
-            $(element).siblings('.glyphicon').removeClass('glyphicon-remove');
+        pincode: {
+            identifier: 'pincode',
+            rules: [{
+                type: 'empty',
+                prompt: "This field is required"
+            }, {
+                type: 'integer',
+                prompt: "Pincode should contain digits only"
+            }, {
+                type: 'exactLength[6]',
+                prompt: "Pincode should contain exactly 6 digits"
+            }]
         },
-        errorElement: 'span',
-        errorClass: 'help-block',
-        errorPlacement: function(error, element) {
-            if (element.parent('.input-group').length) {
-                error.insertAfter(element.parent());
-            } else {
-                error.insertAfter(element);
-            }
+        mobNo: {
+            identifier: 'mobNo',
+            rules: [{
+                type: 'empty',
+                prompt: "This field is required"
+            }, {
+                type: 'integer',
+                prompt: "Mobile number should contain digits only"
+            }, {
+                type: 'exactLength[10]',
+                prompt: "Mobile number should contain exactly 10 digits"
+            }]
         }
-    });
-
-    $('#admForm').validate({
-        rules: {
-            fName: {
-                rangelength: [3, 20]
-            },
-            lName: {
-                rangelength: [3, 20]
-            },
-            pincode: {
-                rangelength: [6, 6]
-            },
-            mobNo: {
-                rangelength: [10, 10]
-            }
+    },
+    2: {
+        marks_100: {
+            identifer: 'marks-100',
+            rules: [{
+                type: 'empty',
+                prompt: "This field is required"
+            }, {
+                type: 'integer[1..100]',
+                prompt: "Please enter any value between 1 and 100"
+            }]
         },
-        messages: {
-            mobNo: {
-                rangelength: 'Mobile number has to be exactly {0} digits long'
-            }
+        marks_120: {
+            identifer: 'marks-120',
+            rules: [{
+                type: 'empty',
+                prompt: "This field is required"
+            }, {
+                type: 'integer[1..120]',
+                prompt: "Please enter any value between 1 and 120"
+            }]
+        },
+        marks_150: {
+            identifer: 'marks-150',
+            rules: [{
+                type: 'empty',
+                prompt: "This field is required"
+            }, {
+                type: 'integer[1..150]',
+                prompt: "Please enter any value between 1 and 150"
+            }]
+        },
+        marks_200: {
+            identifer: 'marks-200',
+            rules: [{
+                type: 'empty',
+                prompt: "This field is required"
+            }, {
+                type: 'integer[1..200]',
+                prompt: "Please enter any value between 1 and 200"
+            }]
         }
-    });
+    },
+    3: {},
+    4: {
+        checkBox: {
+            identifier: 'checkBox',
+            rules: [{
+                type: 'checked',
+                prompt: "Please check this checkbox"
+            }]
+        }
+    }
+};
 
-    $('.digits').rules('add', 'digits');
-
-    $('.sscMks').keyup(function() {
-        $('#sscObtMks').text(parseInt($('#sscEng').val()) + parseInt($('#sscMat').val()) + parseInt($('#sscSci').val()));
-        $('#sscPer').text(parseFloat(parseInt($('#sscObtMks').text()) * 100 / parseInt($('#sscTotMks').text())).toFixed(2));
+var validate = function(page) {
+    console.log(page);
+    console.log(validationRules[page]);
+    $('#admForm').form({
+        fields: validationRules[page],
+        inline: true,
+        on: 'blur'
     });
-
-    $('.hscMks').keyup(function() {
-        $('#hscObtMks').text(parseInt($('#hscEng').val()) + parseInt($('#hscMat').val()) + parseInt($('#hscPhy').val()) + parseInt($('#hscChe').val()) + parseInt($('#hscVoc').val()));
-        $('#hscPer').text(parseFloat(parseInt($('#hscObtMks').text()) * 100 / parseInt($('#hscTotMks').text())).toFixed(2));
-    });
-
-    $('.jeeMks').keyup(function() {
-        $('#jeeObtMks').text(parseInt($('#jeePhy').val()) + parseInt($('#jeeChe').val()) + parseInt($('#jeeMat').val()));
-    });
-});
+};
