@@ -1,0 +1,10 @@
+@import url(template.css);
+@media print {
+    header,
+    nav,
+    aside,
+    footer,
+    .no-print {
+        display: none
+    }
+}

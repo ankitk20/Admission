@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css">
+    <link href="../css/jquery.smartmenus.bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../css/template.css" rel="stylesheet" type="text/css" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" rel="stylesheet" type="text/css" />
+    <title>Admission Portal</title>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Login</h4>
+                </div>
+                <form action="" role="form" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" id="uName" name="uName" class="form-control" placeholder="Application ID" required="required" />
+                            </div>
+                            <span class="help-block">Your Application ID.</span>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                                <input type="text" id="passcode" name="passcode" class="form-control" placeholder="Passcode" required="required" />
+                            </div>
+                            <span class="help-block">The code you purchased at the college.</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnLogin" type="button" class="btn btn-lg btn-primary btn-block">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <header class="container-fluid" role="banner">
+        <img class="img-responsive" src="../images/header.png" alt="header" />
+    </header>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="theNavbar">
+                <!-- TODO fix navbar -->
+                <div class="container">
+                    <div class="row">
+                        <div class="progress col-xs-11" style="margin-top: 1.1em">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 0%">
+                                <span class="sr-only">0% complete</span>
+                            </div>
+                        </div>
+                        <ul class="col-xs-1 nav navbar-nav navbar-right">
+                            <li><a href="#" id="btnLogout">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <form role="form" id="admForm" method="post" action="#">
+            <div class="page-content"></div>
+            <div class="no-print">
+                <nav class="text-center">
+                    <ul class="pagination pagination-lg"></ul>
+                </nav>
+            </div>
+        </form>
+    </main>
+    <footer class="container-fluid text-center" role="footer">
+        <span class="glyphicon glyphicon-copyright-mark"></span>&nbsp;&nbsp;Brought to you by <a href="http://vesit.edu/">VESIT</a>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smartmenus.min.js"></script>
+    <script src="../js/jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="../js/jquery.twbsPagination.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="../js/onload.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/pagination.js"></script>
+</body>
+
+</html>
