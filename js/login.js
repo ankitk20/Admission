@@ -34,7 +34,7 @@ $(function() {
                         });
 
                         loginRequest.fail(function(xhr, status, err) {
-                            console.error("Error occurred: " + status + err);
+                            console.error("Error occurred: " + status + ": " + err);
                         });
 
                         return false;
