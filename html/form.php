@@ -1,4 +1,3 @@
-<?php unset($_SESSION['userID']); unset($_SESSION['password']); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
     <link rel="stylesheet" href="../css/template.css" />
+    <link rel="stylesheet" href="../css/daterangepicker.min.css">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" />
 </head>
@@ -22,13 +22,13 @@
         </div>
         <div class="content">
             <form id="loginForm" class="ui form" role="form" method="post">
-                <div class="field">
-                    <label>Application ID</label>
-                    <input name="uName" type="text">
+                <div class="required field">
+                    <label for="uName">Application ID</label>
+                    <input id="uName" name="uName" type="text" required>
                 </div>
-                <div class="field">
-                    <label>Passcode</label>
-                    <input name="passcode" type="text">
+                <div class="required field">
+                    <label for="passcode">Passcode</label>
+                    <input id="passcode" name="passcode" type="text" required>
                 </div>
             </form>
         </div>
@@ -55,12 +55,6 @@
                         <div class="description">SSC, HSC, JEE</div>
                     </div>
                 </div>
-                <div id="misc" class="disabled step">
-                    <div class="content">
-                        <div class="title">Miscellaneous</div>
-                        <div class="description">Course</div>
-                    </div>
-                </div>
                 <div id="documents" class="disabled step">
                     <div class="content">
                         <div class="title">Final Step!</div>
@@ -69,34 +63,23 @@
                 </div>
             </div>
         </div>
-        <form id="admForm" class="ui form segment" action="" method="post" role="form">
-            <div class="ui container page-content"></div>
-        </form>
+        <div class="page-content ui segment"></div>
         <nav class="ui center aligned container">
-            <div id="jqpagination" class="ui buttons">
-                <a href="#" class="first ui button" data-action="first">
-                    <i class="angle double left large icon"></i>
-                </a>
-                <a href="#" class="previous ui button" data-action="previous">
-                    <i class="angle left large icon"></i>
-                </a>
-                <a href="#" class="next ui button" data-action="next">
-                    <i class="angle right large icon"></i>
-                </a>
-                <a href="#" class="last ui button" data-action="last">
-                    <i class="angle double right large icon"></i>
-                </a>
-            </div>
+            <button id="btnValidate" class="ui large green right labeled icon button">
+                Validate
+                <i class="checkmark icon"></i>
+            </button>
         </nav>
     </main>
     <?php require("footer.php") ?>
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
-    <script src="../js/jquery.jqpagination.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+    <script src="../js/daterangepicker.min.js"></script>
     <script src="../js/login.js"></script>
+    <script src="../js/validate.js"></script>
     <script src="../js/pagination.js"></script>
 </body>
 
 </html>
-<?php unset($_SESSION['userID']); unset($_SESSION['password']); ?>

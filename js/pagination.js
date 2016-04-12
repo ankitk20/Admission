@@ -1,41 +1,108 @@
-var setPage = function(page) {
-    var pageURL;
-    var progress;
+var pages = ['personal', 'academic', 'documents'],
+    curPage,
+    nextPage,
+    formRequest;
 
-    if (page === 1) {
-        progress = "personal";
-        pageURL = "personal.php";
-    } else if (page === 2) {
-        progress = "academic";
-        pageURL = "academic.php";
-    } else if (page === 3) {
-        progress = "misc";
-        pageURL = "misc.php";
-    } else if (page === 4) {
-        progress = "documents";
-        pageURL = "documents.php";
-    }
+function submitForm() {
+    if (formRequest) formRequest.abort();
 
-    $.ajax({
-        url: "form-pages/" + pageURL,
-        async: false,
-        success: function(data) {
-            $(".page-content").html(data);
-            var cur = $("#" + progress);
-            cur.addClass("active").removeClass("disabled");
-            cur.siblings().not(cur.nextAll()).addClass("completed");
-        },
-        error: function() { alert("Couldn't read file"); }
+    var result;
+    var sdata = new FormData(document.getElementById('form'));
+    formRequest = $.ajax({
+        url: 'backend/databaseEntry.php',
+        type: 'POST',
+        data: sdata,
+        processData: false,
+        contentType: false
     });
-};
+
+    formRequest.done(function(response, status, xhr) {
+        console.log(response, status);
+        result = true;
+    });
+
+    formRequest.fail(function(xhr, status, err) {
+        console.error("Error occurred: " + status + ": " + err);
+        result = false;
+    });
+
+    return result;
+}
+
+function optimizeForm() {
+    $('select.ui.dropdown').dropdown();
+
+    $(':file').change(function() {
+        $(this).next().children('input').val($(this).val());
+    });
+    $('#dob').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        format: 'YYYY-MM-DD',
+        minDate: moment().subtract(24, 'years').format('YYYY-MM-DD')
+    });
+}
+
+function setPage(page) {
+    if (page === 3)
+        alert('Success!');
+    else {
+        curPage = page;
+        $.ajax({
+            url: "form-pages/" + pages[page] + '.php',
+            success: function(data) {
+                $(".page-content").html(data);
+                var cur = $("#" + pages[page]);
+                cur.addClass("active").removeClass("disabled");
+                cur.prevAll().addClass("completed").removeClass("active disabled");
+            },
+            error: function() { alert("Couldn't read file"); }
+        });
+        nextPage = page + 1;
+        setTimeout(optimizeForm, 500);
+    }
+}
+
+function calcMarks() {
+
+    var sscTotal = parseInt($('#sscEng').val()) + parseInt($('#sscMat').val()) + parseInt($('#sscSci').val());
+
+    $('#sscObtMks').val(
+        isNaN(sscTotal) ? 0 : sscTotal
+    );
+
+    $('#sscPer').val((parseFloat(parseInt($('#sscObtMks').val()) * 100) / 400).toFixed(2));
+
+    var hscTotal = parseInt($('#hscEng').val()) + parseInt($('#hscMat').val()) + parseInt($('#hscPhy').val()) + parseInt($('#hscChe').val()) + parseInt($('#hscVoc').val());
+
+    $('#hscObtMks').val(
+        isNaN(hscTotal) ? 0 : hscTotal
+    );
+
+    $('#hscPer').val((parseFloat(parseInt($('#hscObtMks').val()) * 100) / 600).toFixed(2));
+
+    var jeeTotal = parseInt($('#hscEng').val()) + parseInt($('#hscMat').val()) + parseInt($('#hscPhy').val()) + parseInt($('#hscChe').val()) + parseInt($('#hscVoc').val());
+
+    $('#jeeObtMks').val(
+        isNaN(jeeTotal) ? 0 : jeeTotal
+    );
+
+    $('#jeePer').val((parseFloat(parseInt($('#jeeObtMks').val()) * 100) / 360).toFixed(2));
+
+}
 
 $(function() {
     setPage(1);
-    $("#jqpagination").jqPagination({
-        max_page: 4,
-        paged: function(page) {
-            setPage(page);
-            validate(page);
+    var i;
+    $('#btnValidate').click(function() {
+        if (curPage === 1) calcMarks();
+        else if (curPage === 2)
+            $(this).html('Submit <i class="send outline icon"></i>');
+
+        i = validate();
+        if (i === true) {
+            if (submitForm() === true)
+                setPage(nextPage);
         }
     });
 });

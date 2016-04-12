@@ -1,46 +1,58 @@
 $(function() {
 
     /* modal not displayed if logged in */
-    var loggedInRequest;
+    var loggedInRequest, loginRequest, logoutRequest;
     if (loggedInRequest) { loggedInRequest.abort(); }
 
     /* modal validation using ajax */
-    loggedInRequest = $.ajax({
-        url: 'backend/autoLogin.php',
-    });
+    loggedInRequest = $.get('backend/autoLogin.php');
 
     loggedInRequest.done(function(response, status, err) {
         if (response === "no") {
-            $('#loginModal')
-                .modal({
+            var loginModal = $('#loginModal');
+            var loginForm = loginModal.find('#loginForm');
+
+            loginForm.form({
+                fields: {
+                    uName: 'empty',
+                    passcode: 'empty'
+                },
+                prompt: {
+                    empty: '{name} is required'
+                },
+                inline: true,
+                on: 'blur'
+            });
+
+            loginModal.modal({
                     blurring: true,
                     closable: false,
                     transition: 'fade',
                     onApprove: function() {
-                        var loginRequest;
-                        if (loginRequest) { loginRequest.abort(); }
+                        if (loginForm.form('is valid')) {
+                            if (loginRequest) { loginRequest.abort(); }
 
-                        var form = $('#loginForm');
-                        var sData = form.serialize();
+                            loginRequest = $.post('backend/authenticateUser.php', $('#loginForm').serialize());
 
-                        loginRequest = $.ajax({
-                            type: 'POST',
-                            url: 'backend/authenticateUser.php',
-                            data: sData,
-                        });
+                            loginRequest.done(function(response, status, xhr) {
+                                $('#loginModal').modal(response);
+                            });
 
-                        loginRequest.done(function(response, status, xhr) {
-                            $('#loginModal').modal(response);
-                        });
+                            loginRequest.fail(function(xhr, status, err) {
+                                console.error("Error occurred: " + status + err);
+                            });
 
-                        loginRequest.fail(function(xhr, status, err) {
-                            console.error("Error occurred: " + status + ": " + err);
-                        });
-
-                        return false;
+                            return false;
+                        } else {
+                            return false;
+                        }
                     }
                 })
                 .modal('show');
+
+            loginModal.find('.message .close').click(function() {
+                $(this).closest('.message').transition('fade');
+            });
         }
     });
 
@@ -50,20 +62,16 @@ $(function() {
 
     /* logout button */
     $('#btnLogout').click(function() {
-        var logoutRequest;
-
         if (logoutRequest) { logoutRequest.abort(); }
 
-        logoutRequest = $.ajax({
-            url: 'backend/logout.php',
-        });
+        logoutRequest = $.get('backend/logout.php');
 
         logoutRequest.done(function(response, status, xhr) {
             alert('You have been logged out.');
-            location.reload(true);
+            location.reload(false);
         });
 
-        logouRequest.fail(function(xhr, status, err) {
+        logoutRequest.fail(function(xhr, status, err) {
             console.error("Error occurred: " + status + err);
         });
     });
