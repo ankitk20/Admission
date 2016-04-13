@@ -1,5 +1,10 @@
 $(function() {
 
+    /* focus restricted to modal..... added tabindex attribute to modal elements*/
+    $('#btnLogin').on('focusout',function(event){
+        $('#uName').focus();
+    });
+
     /* modal not displayed if logged in */
     var loggedInRequest, loginRequest, logoutRequest;
     if (loggedInRequest) { loggedInRequest.abort(); }
