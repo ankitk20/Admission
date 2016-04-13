@@ -120,7 +120,7 @@
     <div class="required field">
         <label for="photo">Photo</label>
         <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
-        <input id="photo" name="photo[]" type="file" required>
+        <input id="photo" name="photo[]" type="file" style="display: none;" required>
         <div class="ui left labeled input">
             <label for="photo" class="ui basic label">Browse</label>
             <input readonly>
@@ -129,7 +129,7 @@
     <div class="required field">
         <label for="sign">Signature</label>
         <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
-        <input id="sign" name="photo[]" type="file" required>
+        <input id="sign" name="photo[]" type="file" style="display: none;" required>
         <div class="ui left labeled input">
             <label for="sign" class="ui basic label">Browse</label>
             <input readonly>
