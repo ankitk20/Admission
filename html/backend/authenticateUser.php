@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-// session_regenerate_id(true); // generates different session id on every login
 
 $conn = new mysqli('localhost', 'root', '', 'registration');
 if ($conn->connect_error) {
@@ -14,8 +13,8 @@ foreach ($_POST as $key => $value) {
   $vars[$key] = $conn->real_escape_string(htmlspecialchars($value));
 }
 
-$stmt = $conn->prepare("SELECT * FROM signedupuser WHERE appid=? AND password=?;");
-$stmt->bind_param("ss", $vars['uName'], $vars['passcode']);
+$stmt = $conn->prepare("SELECT * FROM signedupuser WHERE appid=?;");
+$stmt->bind_param("s", $vars['uName']);
 $stmt->execute();
 $stmt->store_result();
 
@@ -45,13 +44,11 @@ if ($stmt->num_rows === 0) {
 			$stmt->execute();
 
 			$_SESSION['userID'] = $vars['uName'];
-			$_SESSION['password'] = $vars['passcode'];
 			echo 'hide';
 		}
 	}
 } else {
 	$_SESSION['userID'] = $vars['uName'];
-	$_SESSION['password'] = $vars['passcode'];
 	echo 'hide';
 }
 

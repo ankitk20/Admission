@@ -2,7 +2,7 @@
 
 session_start();
 
-if (isset($_SESSION['userID']) && isset($_SESSION['password']))
+if (isset($_SESSION['userID']))
   echo 'yes';
 else
   echo 'no';

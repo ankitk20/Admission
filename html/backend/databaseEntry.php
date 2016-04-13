@@ -14,6 +14,7 @@ foreach ($_POST as $key => $value) {
 }
 
 $vars['userID'] = $_SESSION['userID'];
+echo var_export($vars);
 
 switch ($vars['table']) {
   case 'personal':

@@ -19,7 +19,7 @@
     <div class="two fields">
         <div class="required field">
             <label for="popName">Father's name</label>
-            <input type="text" id="popName" name="momName" required>
+            <input type="text" id="popName" name="popName" required>
         </div>
         <div class="required field">
             <label for="momName">Mother's name</label>
@@ -30,8 +30,8 @@
         <label for="gender">Gender</label>
         <select id="gender" name="gender" class="ui dropdown" required>
             <option selected></option>
-            <option>Male</option>
-            <option>Female</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
         </select>
     </div>
     <div class="required field">
@@ -119,7 +119,7 @@
     <!-- Personal Photo Details -->
     <div class="required field">
         <label for="photo">Photo</label>
-        <input id="photo" name="photo[]" type="file" style="display: none;" required>
+        <input id="photo" name="photo[]" type="file" accept=".jpeg, .png" style="display: none;" required>
         <div class="ui left labeled input">
             <label for="photo" class="ui basic label">Browse</label>
             <input readonly>
@@ -127,7 +127,7 @@
     </div>
     <div class="required field">
         <label for="sign">Signature</label>
-        <input id="sign" name="photo[]" type="file" style="display: none;" required>
+        <input id="sign" name="photo[]" type="file" accept=".jpeg, .png" style="display: none;" required>
         <div class="ui left labeled input">
             <label for="sign" class="ui basic label">Browse</label>
             <input readonly>

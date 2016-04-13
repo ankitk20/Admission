@@ -15,7 +15,7 @@ var validationRules = {
     city: 'empty',
     pincode: ['empty', 'integer', 'exactLength[6]'],
     email: ['empty', 'email'],
-    altEmail: ['empty', 'email'],
+    altEmail: ['empty', 'email', 'different[email]'],
     mobNo: ['empty', 'integer', 'exactLength[10]'],
 
     // Religion Details

@@ -12,6 +12,7 @@ function submitForm() {
         url: 'backend/databaseEntry.php',
         type: 'POST',
         data: sdata,
+        async: false,
         processData: false,
         contentType: false
     });
@@ -41,6 +42,11 @@ function optimizeForm() {
         format: 'YYYY-MM-DD',
         minDate: moment().subtract(24, 'years').format('YYYY-MM-DD')
     });
+
+
+    if (curPage === 1) calcMarks();
+    else if (curPage === 2)
+        $('#btnValidate').html('Submit <i class="send outline icon"></i>');
 }
 
 function setPage(page) {
@@ -59,46 +65,59 @@ function setPage(page) {
             error: function() { alert("Couldn't read file"); }
         });
         nextPage = page + 1;
+
         setTimeout(optimizeForm, 500);
     }
 }
 
 function calcMarks() {
+    console.log('calcMarks');
+    $("input[name^='ssc']").blur(function() {
+        var sscTotal =
+            parseInt($('#sscEng').val()) +
+            parseInt($('#sscMat').val()) +
+            parseInt($('#sscSci').val());
 
-    var sscTotal = parseInt($('#sscEng').val()) + parseInt($('#sscMat').val()) + parseInt($('#sscSci').val());
+        $('#sscObtMks').val(
+            isNaN(sscTotal) ? 0 : sscTotal
+        );
 
-    $('#sscObtMks').val(
-        isNaN(sscTotal) ? 0 : sscTotal
-    );
+        $('#sscPer').val((parseFloat(parseInt($('#sscObtMks').val()) * 100) / 400).toFixed(2));
+    });
 
-    $('#sscPer').val((parseFloat(parseInt($('#sscObtMks').val()) * 100) / 400).toFixed(2));
+    $("input[name^='hsc']").blur(function() {
+        var hscTotal =
+            parseInt($('#hscEng').val()) +
+            parseInt($('#hscMat').val()) +
+            parseInt($('#hscPhy').val()) +
+            parseInt($('#hscChe').val()) +
+            parseInt($('#hscVoc').val());
 
-    var hscTotal = parseInt($('#hscEng').val()) + parseInt($('#hscMat').val()) + parseInt($('#hscPhy').val()) + parseInt($('#hscChe').val()) + parseInt($('#hscVoc').val());
+        $('#hscObtMks').val(
+            isNaN(hscTotal) ? 0 : hscTotal
+        );
 
-    $('#hscObtMks').val(
-        isNaN(hscTotal) ? 0 : hscTotal
-    );
+        $('#hscPer').val((parseFloat(parseInt($('#hscObtMks').val()) * 100) / 600).toFixed(2));
+    });
 
-    $('#hscPer').val((parseFloat(parseInt($('#hscObtMks').val()) * 100) / 600).toFixed(2));
+    $("input[name^='jee']").blur(function() {
+        var jeeTotal =
+            parseInt($('#jeePhy').val()) +
+            parseInt($('#jeeChe').val()) +
+            parseInt($('#jeeMat').val());
 
-    var jeeTotal = parseInt($('#hscEng').val()) + parseInt($('#hscMat').val()) + parseInt($('#hscPhy').val()) + parseInt($('#hscChe').val()) + parseInt($('#hscVoc').val());
+        $('#jeeObtMks').val(
+            isNaN(jeeTotal) ? 0 : jeeTotal
+        );
 
-    $('#jeeObtMks').val(
-        isNaN(jeeTotal) ? 0 : jeeTotal
-    );
-
-    $('#jeePer').val((parseFloat(parseInt($('#jeeObtMks').val()) * 100) / 360).toFixed(2));
-
+        $('#jeePer').val((parseFloat(parseInt($('#jeeObtMks').val()) * 100) / 360).toFixed(2));
+    });
 }
 
 $(function() {
-    setPage(1);
+    setPage(0);
     var i;
     $('#btnValidate').click(function() {
-        if (curPage === 1) calcMarks();
-        else if (curPage === 2)
-            $(this).html('Submit <i class="send outline icon"></i>');
-
         i = validate();
         if (i === true) {
             if (submitForm() === true)

@@ -95,8 +95,8 @@
             <span class="ui label">/ 100</span>
         </div>
     </div>
-    <div class="field">
-        <label for="hscVoc">CS / required Electronics / IT</label>
+    <div class="required field">
+        <label for="hscVoc">CS / Electronics / IT</label>
         <div class="ui right labeled input">
             <input id="hscVoc" name="hscVoc" type="text" required>
             <span class="ui label">/ 200</span>
