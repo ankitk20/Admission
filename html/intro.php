@@ -7,11 +7,11 @@
     <meta charset="utf-8" />
     <!-- CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/jquery.smartmenus.bootstrap.css" rel="stylesheet" type="text/css">
     <link href="../css/template.css" rel="stylesheet" type="text/css" />
-    <link href="../css/intro.css" rel="stylesheet" type="text/css" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic" rel="stylesheet" type="text/css" />
-    <title>Welcome to VESIT</title>
+    <title>Admission Portal</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -29,24 +29,26 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="theNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="tempForm.html">Admission</a></li>
-                    <li><a href="#">Departments</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Placements</a></li>
-                    <li><a href="#">About Us</a></li>
+                <!-- TODO fix navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Login <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Admin</a></li>
+                            <li><a href="#">Student</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <main class="container-fluid">
-        <div class="row-fluid">
+        <div class="row">
             <aside class="col-sm-2" role="sidebar">
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a data-toggle="pill" href="#">Home</a></li>
-                    <li><a data-toggle="pill" href="#intro">Introduction</a></li>
-                    <li><a data-toggle="pill" href="#features">Features</a></li>
+                <ul id="sidebar" class="list-group">
+                    <a class="list-group-item" href="#">Home</a>
+                    <a class="list-group-item" href="#intro">Introduction</a>
+                    <a class="list-group-item" href="#features">Features</a>
                 </ul>
             </aside>
             <article class="col-sm-10" role="article">
@@ -105,12 +107,14 @@
             </article>
         </div>
     </main>
-    <footer class="container-fluid text-center" role="footer">Brought to you by VESIT</footer>
+    <footer class="container-fluid text-center" role="footer">
+        <span class="glyphicon glyphicon-copyright-mark"></span>&nbsp;&nbsp;Brought to you by <a href="http://vesit.edu/">VESIT</a>
+    </footer>
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!-- <script src="../js/scroll.js"></script> -->
+    <script src="../js/jquery.smartmenus.min.js"></script>
+    <script src="../js/jquery.smartmenus.bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,59 +1,77 @@
-$(function() {
-    $.validator.setDefaults({
-        highlight: function(element) {
-            $(element).closest('.form-group').addClass('has-error has-feedback');
-            $(element).siblings('.glyphicon').addClass('glyphicon-remove').removeClass('glyphicon-ok');
-        },
-        unhighlight: function(element) {
-            $(element).closest('.form-group').addClass('has-success has-feedback').removeClass('has-error');
-            $(element).siblings('.glyphicon').addClass('glyphicon-ok').removeClass('glyphicon-remove');
-        },
-        errorElement: 'span',
-        errorClass: 'help-block',
-        errorPlacement: function(error, element) {
-            if (element.parent('.input-group').length) {
-                error.insertAfter(element.parent());
-            } else {
-                error.insertAfter(element);
-            }
-        }
-    });
+var validationRules = {
 
-    $('#admForm').validate({
-        rules: {
-            fName: {
-                rangelength: [3, 20]
-            },
-            lName: {
-                rangelength: [3, 20]
-            },
-            pincode: {
-                rangelength: [6, 6]
-            },
-            mobNo: {
-                rangelength: [10, 10]
-            }
-        },
-        messages: {
-            mobNo: {
-                rangelength: 'Mobile number has to be exactly {0} digits long'
-            }
-        }
-    });
+    // Personal Details
+    fName: ['empty', 'regExp[/^[a-zA-Z]{3,20}$/]'],
+    mName: ['empty', 'regExp[/^[a-zA-Z]{3,20}$/]'],
+    lName: ['empty', 'regExp[/^[a-zA-Z]{3,20}$/]'],
+    popName: ['empty', 'regExp[/^[a-zA-Z]{3,20}$/]'],
+    momName: ['empty', 'regExp[/^[a-zA-Z]{3,20}$/]'],
+    gender: 'empty',
+    dob: 'empty',
 
-    $('.digits').rules('add', 'digits');
+    // Address Details
+    address: ['empty', 'maxLength[100]'],
+    state: 'empty',
+    city: 'empty',
+    pincode: ['empty', 'integer', 'exactLength[6]'],
+    email: ['empty', 'email'],
+    altEmail: ['empty', 'email', 'different[email]'],
+    mobNo: ['empty', 'integer', 'exactLength[10]'],
 
-    $('.sscMks').keyup(function() {
-        $('#sscObtMks').text(parseInt($('#sscEng').val()) + parseInt($('#sscMat').val()) + parseInt($('#sscSci').val()));
-        $('#sscPer').text(parseFloat(parseInt($('#sscObtMks').text()) * 100 / parseInt($('#sscTotMks').text())).toFixed(2));
-    });
+    // Religion Details
+    religion: 'empty',
 
-    $('.hscMks').keyup(function() {
-        $('#hscObtMks').text(parseInt($('#hscEng').val()) + parseInt($('#hscMat').val()) + parseInt($('#hscPhy').val()) + parseInt($('#hscChe').val()) + parseInt($('#hscVoc').val()));
-        $('#hscPer').text(parseFloat(parseInt($('#hscObtMks').text()) * 100 / parseInt($('#hscTotMks').text())).toFixed(2));
-    });
+    // Personal Photo Details
+    photo: 'empty',
+    sign: 'empty',
 
-    $('.jeeMks').keyup(function() {
-        $('#jeeObtMks').text(parseInt($('#jeePhy').val()) + parseInt($('#jeeChe').val()) + parseInt($('#jeeMat').val()));
+    // SSC Details
+    sscSchool: 'empty',
+    sscNo: 'empty',
+    sscEng: ['empty', 'integer[1..100]'],
+    sscMat: ['empty', 'integer[1..150]'],
+    sscSci: ['empty', 'integer[1..150]'],
+    sscBoard: 'empty',
+    sscYear: 'empty',
+
+    // HSC Details
+    hscSchool: 'empty',
+    hscNo: 'empty',
+    hscEng: ['empty', 'integer[1..100]'],
+    hscMat: ['empty', 'integer[1..100]'],
+    hscPhy: ['empty', 'integer[1..100]'],
+    hscChe: ['empty', 'integer[1..100]'],
+    hscVoc: ['empty', 'integer[1..200]'],
+    hscBoard: 'empty',
+    hscYear: 'empty',
+
+    // JEE Details
+    jeePhy: ['empty', 'integer[1..120]'],
+    jeeChe: ['empty', 'integer[1..120]'],
+    jeeMat: ['empty', 'integer[1..120]'],
+
+    // Documents
+    terms: 'checked'
+
+};
+
+var prompts = {
+    empty: '{name} is required',
+    checked: 'You must accept the terms and conditions',
+    regExp: '{name} must be 3 to 20 characters long',
+    integer: '{name} must contain only digits of specified range',
+};
+
+function initForm() {
+    $('#form').form({
+        fields: validationRules,
+        prompt: prompts,
+        inline: true,
+        on: 'change'
     });
-});
+}
+
+function validate() {
+    initForm();
+    return $('#form').form('is valid');
+}
