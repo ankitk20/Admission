@@ -24,16 +24,16 @@
             <form id="loginForm" class="ui form" role="form" method="post">
                 <div class="required field">
                     <label for="uName">Application ID</label>
-                    <input id="uName" name="uName" type="text" required>
+                    <input id="uName" name="uName" type="text" tabindex="1" required>
                 </div>
                 <div class="required field">
                     <label for="passcode">Passcode</label>
-                    <input id="passcode" name="passcode" type="password" required>
+                    <input id="passcode" name="passcode" type="password" tabindex="2" required>
                 </div>
             </form>
         </div>
         <div class="actions">
-            <button id="btnLogin" class="ui positive right labeled icon button">
+            <button id="btnLogin" class="ui positive right labeled icon button" tabindex="3">
                 Log Me In!
                 <i class="sign in icon"></i>
             </button>
