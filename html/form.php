@@ -28,7 +28,7 @@
                 </div>
                 <div class="required field">
                     <label for="passcode">Passcode</label>
-                    <input id="passcode" name="passcode" type="text" required>
+                    <input id="passcode" name="passcode" type="password" required>
                 </div>
             </form>
         </div>
