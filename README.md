@@ -1,2 +1,2 @@
 # Admission
-CollegeAdmissionWebsite
+College Admission Website
